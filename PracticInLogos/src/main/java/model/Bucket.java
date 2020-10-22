@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data
@@ -12,11 +13,11 @@ import java.time.LocalDateTime;
 public class Bucket
 {
     private int id;
-    private LocalDateTime purchaseDate;
+    private Timestamp purchaseDate;
 
-    public Bucket(LocalDateTime purchaseDate)
+    public Bucket(Timestamp purchaseDate)
     {
-//        this.id = RandomIdGenerator.getRandomID();
+        this.id = id;
         this.purchaseDate = purchaseDate;
     }
 }

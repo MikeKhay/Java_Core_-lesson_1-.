@@ -7,15 +7,15 @@ import java.util.List;
 
 public interface ProductDao
 {
-    List<Product> readAll() throws SQLException;
+    List<Product> readAll() throws SQLException, ClassNotFoundException;
 
-    Product read(int id) throws SQLException;
+    Product read(int id) throws SQLException, ClassNotFoundException;
 
-    void create(Product product) throws SQLException;
+    void create(Product product) throws SQLException, ClassNotFoundException;
 
-    void delete(int id) throws SQLException;
+    boolean delete(int id) throws SQLException, ClassNotFoundException;
 
-    void update(int id, Product current) throws SQLException;
+    void update(int id, Product current) throws SQLException, ClassNotFoundException;
 
-    boolean exists(int id) throws SQLException;
+    boolean exists(int id) throws SQLException, ClassNotFoundException;
 }

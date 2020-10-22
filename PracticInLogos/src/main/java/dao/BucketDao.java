@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public interface BucketDao
 {
-    Bucket read(int id) throws SQLException;
+    Bucket read(int id) throws SQLException, ClassNotFoundException;
 
-    void create(Bucket bucket) throws SQLException;
+    void create(Bucket bucket) throws SQLException, ClassNotFoundException;
 
-    void delete(int id) throws SQLException;
+    boolean delete(int id) throws SQLException, ClassNotFoundException;
 }
