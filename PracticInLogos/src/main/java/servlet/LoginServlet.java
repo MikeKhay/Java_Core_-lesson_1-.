@@ -28,12 +28,14 @@ public class LoginServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
     {
+        logger.info("I am LoginServlet HELLO!!!");
         String email = req.getParameter("email");
 
         User user = userService.readByEmail(email);
 
         if (!Objects.isNull(user))
         {
+            logger.info("User not null");
             String password = req.getParameter("password");
             if (user.getPassword().equals(password))
             {
@@ -44,7 +46,10 @@ public class LoginServlet extends HttpServlet
                 session.setAttribute("userEmail", email);
 
                 req.getRequestDispatcher("cabinet.jsp").forward(req, resp);
-
+//                resp.setContentType("text/plain");
+//                resp.setCharacterEncoding("UTF-8");
+//                resp.getWriter().write("Success");
+//                logger.info("Sorry bro");
             } else
             {
                 logger.info("Wrong password for user with email : " + email);
@@ -57,5 +62,6 @@ public class LoginServlet extends HttpServlet
             //req.getRequestDispatcher("index.jsp").forward(req, resp);
             //TODO: redirect to registration page
         }
+
     }
 }

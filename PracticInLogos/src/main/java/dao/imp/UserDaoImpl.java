@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao
     public User readByEmail(String email) throws SQLException, ClassNotFoundException {
         try (
             Connection connection = MySqlConnector.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM user WHERE email = ?")
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Store.user WHERE email = ?")
         )
         {
             statement.setString(1, email);

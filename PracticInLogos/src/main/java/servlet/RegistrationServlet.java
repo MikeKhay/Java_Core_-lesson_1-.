@@ -57,5 +57,9 @@ public class RegistrationServlet extends HttpServlet
             log.info("User with email : " + email + " already registered! Redirection to login page ...");
             //TODO : redirect user on login page if email is already in use
         }
+
+        resp.setContentType("text/plain");
+        resp.setCharacterEncoding("UTF-8");
+        resp.getWriter().write("Success");
     }
 }
