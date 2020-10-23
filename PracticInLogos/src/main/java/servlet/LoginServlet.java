@@ -35,7 +35,6 @@ public class LoginServlet extends HttpServlet
 
         if (!Objects.isNull(user))
         {
-            logger.info("User not null");
             String password = req.getParameter("password");
             if (user.getPassword().equals(password))
             {
